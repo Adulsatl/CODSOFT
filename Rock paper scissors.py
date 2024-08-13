@@ -1,25 +1,25 @@
 import random
 
 def get_computer_choice():
-    return random.choice(['rock', 'paper', 'scissors'])
+    return random.choice(['rock', 'paper', 'scissor'])
 def determine_winner(user_choice, computer_choice):
     if user_choice == computer_choice:
         return "It's a tie!"
-    elif (user_choice == 'rock' and computer_choice == 'scissors') or \
-         (user_choice == 'scissors' and computer_choice == 'paper') or \
+    elif (user_choice == 'rock' and computer_choice == 'scissor') or \
+         (user_choice == 'scissor' and computer_choice == 'paper') or \
          (user_choice == 'paper' and computer_choice == 'rock'):
         return "You win!"
     else:
-        return "You lose!"
+        return "Sorry!!You lose!:("
 def play_game():
-    print("Welcome to Rock-Paper-Scissors Game!")
+    print("Welcome to Rock Paper Scissor Game!")
     user_score = 0
     computer_score = 0
 
     while True:
-        user_choice = input("Enter rock, paper, or scissors: ").lower()
-        if user_choice not in ['rock', 'paper', 'scissors']:
-            print("Invalid choice, please try again.")
+        user_choice = input("Enter rock,paper,or scissor: ").lower()
+        if user_choice not in ['rock', 'paper', 'scissor']:
+            print("Invalid choice,Try again.")
             continue
 
         computer_choice = get_computer_choice()
@@ -35,6 +35,5 @@ def play_game():
         play_again = input("Do you want to play again? (yes/no): ").lower()
         if play_again != 'yes':
             break
-    print(f"Thanks for playing! Final Score -> You: {user_score}, Computer: {computer_score}")
-
+    print(f"Thank you for playing! Final Score -> You: {user_score}, Computer: {computer_score}")
 play_game()
